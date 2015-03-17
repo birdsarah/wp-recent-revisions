@@ -1,5 +1,5 @@
 === Recent Revisions ===
-
+````
 Plugin Name: Recent Revisions
 Tags: revision, revision control, summary, posts, post revisions, dashboard, admin, revision overview, version control, versioning, wiki
 Requires at least: 2.7
@@ -9,7 +9,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Contributors: birdsarah, benjamin4
 Donate link: http://www.sarahbird.org/recent-revisions
-
+````
 == Description ==
 
 Shows an overview of your recent post revisions on your administration dashboard. Ideal for sites with content that gets updated by multiple authors where you want to keep an eye on the changes that have been made. Number of revisions displayed is configurable as well whether you want the author and the date shown. Posts are displayed in GMT to enable effective collaboration across timezones.
@@ -36,11 +36,13 @@ From the Plugins Page “Activate Now”
 Then select Dashboard and **ensure your RecentRevisions are visible by selecting “Recent Revisions” under Screen Options (top right corner)**
 
 == Screenshots ==
+
 1. Recent Revisions Dashboard View
 2. Recent Revisions Options
 3. Recent Revisions Dashboard (De)Activate
 
 == Frequently Asked Questions ==
+
 Well it's v1.0 so hard to say right now! Ask me questions and I'll answer them.
 
 == ChangeLog ==
