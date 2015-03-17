@@ -1,4 +1,5 @@
 === Recent Revisions ===
+
 Plugin Name: Recent Revisions
 Tags: revision, revision control, summary, posts, post revisions, dashboard, admin, revision overview, version control, versioning, wiki
 Requires at least: 2.7
