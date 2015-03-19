@@ -88,7 +88,7 @@ function RecentRevisions() {
 					$post_meta .= ' (<a href="revision.php?action=diff&post_type=page&right=' . $post->ID . '&left=' . $prevId . '">' . __('diff', 'recent-revisions') . '</a>)';
 				}
 			}
-				
+
 			//print it out
 			?>
 <li class='post-meta'><?php echo $post_meta; ?>
@@ -171,4 +171,15 @@ function RecentRevisions_Setup() {
 }
 //integrate into dashboard
 add_action('wp_dashboard_setup', 'RecentRevisions_Init');
+
+if(WP_POST_REVISIONS==false){
+	add_action( 'admin_notices', 'no_post_revisions' );
+}
+function no_post_revisions() {
+	?>
+	<div class="error">
+		<p><?php _e( 'WP_POST_REVISIONS set to false, please set to 1 or more in wp-config.php to store revisions! <a href="https://wordpress.org/plugins/recent-revisions/faq/">For help, read the FAQ</a>', 'recent-revisions' ); ?></p>
+	</div>
+	<?php
+}
 ?>
