@@ -176,10 +176,12 @@ if(WP_POST_REVISIONS==false){
 	add_action( 'admin_notices', 'no_post_revisions' );
 }
 function no_post_revisions() {
-	?>
-	<div class="error">
-		<p><?php _e( 'WP_POST_REVISIONS set to false, please set to 1 or more in wp-config.php to store revisions! <a href="https://wordpress.org/plugins/recent-revisions/faq/">For help, read the FAQ</a>', 'recent-revisions' ); ?></p>
-	</div>
-	<?php
+	if(current_user_can('edit_plugins')){
+		?>
+		<div class="error">
+			<p><?php _e( 'WP_POST_REVISIONS set to false, please change to 1 or more in wp-config.php to store revisions! <a href="https://wordpress.org/plugins/recent-revisions/faq/">For help, read the FAQ</a>', 'recent-revisions' ); ?></p>
+		</div>
+		<?php
+	}
 }
 ?>
