@@ -43,7 +43,18 @@ Then select Dashboard and **ensure your RecentRevisions are visible by selecting
 
 == Frequently Asked Questions ==
 
-Well it's v1.0 so hard to say right now! Ask me questions and I'll answer them.
+**Why can’t I see any revisions?**
+WP_POST_REVISIONS is most likely set to 0 or FALSE in your wp-config.php. This value is the number of previous post versions that are saved by WordPress and used for the revision history. When set to TRUE, all revisions are saved (WordPress default).
+For further help, see the codex guide on editing wp-config.php - http://codex.wordpress.org/Editing_wp-config.php#Post_Revisions
+
+**Does it work with custom post types?**
+Yes, Recent Revisions supports custom post types!
+
+Simply add **revisions** to 'supports' when declaring the custom post types:
+http://codex.wordpress.org/Function_Reference/register_post_type
+
+**I have a question / feature request**
+Please create a topic in the support forum - https://wordpress.org/support/plugin/recent-revisions
 
 == ChangeLog ==
 
