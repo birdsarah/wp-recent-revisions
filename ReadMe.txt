@@ -60,7 +60,7 @@ Please create a topic in the support forum - https://wordpress.org/support/plugi
 
 **v1.2**
 * Update diff links to be WordPress v3.6+ compatible
-* Add a warning if revisions not enabled
+* Add a warning if revisions are not enabled
 
 **v1.1.1**
 
