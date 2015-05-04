@@ -59,8 +59,8 @@ Please create a topic in the support forum - https://wordpress.org/support/plugi
 == ChangeLog ==
 
 **v1.2**
-* Update diff links to be 3.6+ compatible
-* Add a warning if revisions not enabled.
+* Update diff links to be WordPress v3.6+ compatible
+* Add a warning if revisions not enabled
 
 **v1.1.1**
 
