@@ -84,8 +84,7 @@ function RecentRevisions() {
 				$post_meta .= ' (' . __('new', 'recent-revisions') . ')';
 				else
 				{
-					$prevId = $rev->ID;
-					$post_meta .= ' (<a href="revision.php?action=diff&post_type=page&right=' . $post->ID . '&left=' . $prevId . '">' . __('diff', 'recent-revisions') . '</a>)';
+					$post_meta .= ' (<a href="revision.php?revision=' . $post->ID . '">' . __('diff', 'recent-revisions') . '</a>)';
 				}
 			}
 
