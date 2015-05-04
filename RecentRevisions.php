@@ -38,7 +38,7 @@ The license is also available at http://www.gnu.org/copyleft/gpl.html
 
 // Load up the localization file if we're using WordPress in a different language
 // Place it in this plugin's folder and name it "recent-revisions-[value in wp-config].mo"
-load_plugin_textdomain( 'recent-revisions', false, 'recent-revisions/' );
+load_plugin_textdomain( 'recent-revisions', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 
 function RecentRevisions() {
 
