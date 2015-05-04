@@ -7,14 +7,14 @@ Tested up to: 4.2.1
 Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Contributors: birdsarah, benjamin4
+Contributors: birdsarah, benjamin4, hubdotcom
 Donate link: http://www.sarahbird.org/recent-revisions
 ````
 == Description ==
 
 Shows an overview of your recent post revisions on your administration dashboard. Ideal for sites with content that gets updated by multiple authors where you want to keep an eye on the changes that have been made. Number of revisions displayed is configurable as well whether you want the author and the date shown. Posts are displayed in GMT to enable effective collaboration across timezones.
 
-Experiences, feedback and thoughts welcome (http://www.sarahbird.org/contact or https://github.com/birdsarah/wp-recent-revisions/issues)
+Experiences, feedback and thoughts welcome (https://github.com/birdsarah/wp-recent-revisions/issues)
  
 This plugin was based on Rick's "Dashboard: Recent Posts Extended" http://rick.jinlabs.com - a big thank you for his hard work.
 
@@ -57,6 +57,10 @@ http://codex.wordpress.org/Function_Reference/register_post_type
 Please create a topic in the support forum - https://wordpress.org/support/plugin/recent-revisions
 
 == ChangeLog ==
+
+**v1.2**
+* Update diff links to be 3.6+ compatible
+* Add a warning if revisions not enabled.
 
 **v1.1.1**
 
