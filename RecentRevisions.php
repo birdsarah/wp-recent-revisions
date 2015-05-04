@@ -171,7 +171,7 @@ function RecentRevisions_Setup() {
 //integrate into dashboard
 add_action('wp_dashboard_setup', 'RecentRevisions_Init');
 
-if(WP_POST_REVISIONS==false){
+if(defined('WP_POST_REVISIONS') && WP_POST_REVISIONS==false){
 	add_action( 'admin_notices', 'no_post_revisions' );
 }
 function no_post_revisions() {
