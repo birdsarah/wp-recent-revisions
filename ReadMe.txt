@@ -14,7 +14,7 @@ Donate link: http://www.sarahbird.org/recent-revisions
 
 Shows an overview of your recent post revisions on your administration dashboard. Ideal for sites with content that gets updated by multiple authors where you want to keep an eye on the changes that have been made. Number of revisions displayed is configurable as well whether you want the author and the date shown. Posts are displayed in GMT to enable effective collaboration across timezones.
 
-Experiences, feedback and thoughts welcome (http://www.sarahbird.org/contact)
+Experiences, feedback and thoughts welcome (http://www.sarahbird.org/contact or https://github.com/birdsarah/wp-recent-revisions/issues)
  
 This plugin was based on Rick's "Dashboard: Recent Posts Extended" http://rick.jinlabs.com - a big thank you for his hard work.
 
