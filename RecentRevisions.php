@@ -107,11 +107,36 @@ function RecentRevisions() {
 
 
 function RecentRevisions_Init() {
-	wp_add_dashboard_widget( 'RecentRevisions', __( 'Recent Revisions', 'recent-revisions' ), 'RecentRevisions', 'RecentRevisions_Setup');
+	$options = RecentRevisions_Options();
+
+	switch ($options['permissions']) {
+		case 'subscriber':
+			$capability = 'read';
+			break;
+		case 'contributor':
+			$capability = 'edit_posts';
+			break;
+		case 'author':
+			$capability = 'edit_published_posts';
+			break;
+		case 'editor':
+			$capability = 'edit_others_posts';
+			break;
+		case 'administrator':
+			$capability = 'manage_options';
+			break;
+		default:
+			$capability = 'edit_posts';
+			break;
+	}
+
+	if ( current_user_can( $capability ) ) {
+		wp_add_dashboard_widget( 'RecentRevisions', __( 'Recent Revisions', 'recent-revisions' ), 'RecentRevisions', 'RecentRevisions_Setup');
+	}
 }
 
 function RecentRevisions_Options() {
-	$defaults = array( 'items' => 25, 'showdatetime' => 1, 'showauthor' => 1, 'tz_gmt' => 0, 'showdiff' => 0);
+	$defaults = array( 'items' => 25, 'permissions' => 'contributor', 'showdatetime' => 1, 'showauthor' => 1, 'tz_gmt' => 0, 'showdiff' => 0);
 	if ( ( !$options = get_option( 'RecentRevisions' ) ) || !is_array($options) )
 	$options = array();
 	return array_merge( $defaults, $options );
@@ -125,6 +150,7 @@ function RecentRevisions_Setup() {
 	if ( 'post' == strtolower($_SERVER['REQUEST_METHOD']) && isset( $_POST['widget_id'] ) && 'RecentRevisions' == $_POST['widget_id'] ) {
 		foreach ( array( 'items', 'showdatetime', 'showauthor', 'tz_gmt', 'showdiff' ) as $key )
 		$options[$key] = (int) @$_POST[$key];
+		$options['permissions'] = $_POST['permissions'];
 		update_option( 'RecentRevisions', $options );
 	}
 
@@ -137,6 +163,16 @@ function RecentRevisions_Setup() {
 		echo "<option value='$i'" . ( $options['items'] == $i ? " selected='selected'" : '' ) . ">$i</option>";
 		?>
 	</select> </label>
+</p>
+
+<p>
+	<label for="permissions"><?php _e('Minimum role to view recent revisions', 'recent-revisions' ); ?></label>
+	<select name="permissions" id="permissions">
+		<?php
+		$roles = array('subscriber', 'contributor', 'author', 'editor', 'administrator');
+		foreach ( $roles as $role )
+			echo "<option value='$role'" . ( $options['permissions'] == $role ? " selected='selected'" : '' ) . ">".ucfirst($role)."</option>";
+		?></select>
 </p>
 
 <p>
